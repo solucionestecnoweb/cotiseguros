@@ -5,7 +5,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     policy_number = fields.Char('Nro de Poliza')
-    type = fields.Many2one('type.partner', string='Tipo')
+    type_partner_id = fields.Many2one('type.partner', string='Tipo', store=True)
     emission_date = fields.Char('Fecha de Emisión')
     due_date = fields.Char('Fecha de Vencimiento')
     age = fields.Char('Edad')
@@ -17,6 +17,7 @@ class ResPartner(models.Model):
    
 class TypePartner(models.Model):
     _name = 'type.partner' 
+    _rec_name = 'name'
     
-    type = fields.Char('Tipo')
-    
+    name = fields.Char('Tipo')
+

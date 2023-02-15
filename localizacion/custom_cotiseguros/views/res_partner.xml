@@ -9,7 +9,7 @@
                
                 <xpath expr="//field[@name='category_id']" position="after">
                     <field name="policy_number"/>
-                    <field name="type"/>
+                    <field name="type_partner_id"/>
                     <field name="emission_date"/>
                     <field name="due_date"/>
                 </xpath>
