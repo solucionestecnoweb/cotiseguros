@@ -5,14 +5,19 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     policy_number = fields.Char('Nro de Poliza')
-    type_partner = fields.Selection([('new', 'Nuevo'), ('renewal', 'Renovacion')],string='Tipo')
-    emission_date = fields.Date('Fecha de Emisión')
-    due_date = fields.Date('Fecha de Vencimiento')
+    type_partner_id = fields.Many2one('type.partner', string='Tipo', store=True)
+    emission_date = fields.Char('Fecha de Emisión')
+    due_date = fields.Char('Fecha de Vencimiento')
     age = fields.Char('Edad')
     gender = fields.Selection([('male', 'Masculino'), ('female', 'Femenino')],
                               string='Genero')
+    modify_individual_label_policyholder = fields.Char('Modificar etiqueta individual por tomador')
+    modify_contact_file_beneficiary = fields.Char('Modificar ficha de contactos por beneficiario')
     rif_ci = fields.Char('RIF/CI')
-    # company_type = fields.Selection(string='Company Type',
-    #     selection=[('person', 'Tomador'), ('company', 'Company')],
-    #     compute='_compute_company_type', inverse='_write_company_type')
+   
+class TypePartner(models.Model):
+    _name = 'type.partner' 
+    _rec_name = 'name'
+    
+    name = fields.Char('Tipo')
 
