@@ -6,7 +6,6 @@
     "license": "AGPL-3",
     "depends": ["base", "stock", "product"],
     "data": [
-        'security/ir.model.access.csv',
         'views/res_partner.xml',
 
 
