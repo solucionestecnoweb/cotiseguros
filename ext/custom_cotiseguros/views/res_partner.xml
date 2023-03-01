@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_inh" model="ir.ui.view">
+            <field name="name">res.partner.inh</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+               
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="policy_number"/>
+                    <field name="type_partner"/>
+                    <field name="security_partner"/>
+                    <field name="emission_date"/>
+                    <field name="due_date"/>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="rif_ci"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='child_ids']//kanban/field[@name='name']" position="after">
+                    <field name="rif_ci"/>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/form//field[@name='name']" position="after">
+                    <field name="rif_ci"/>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="string">Beneficiario</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
