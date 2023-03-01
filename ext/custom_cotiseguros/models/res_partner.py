@@ -12,4 +12,9 @@ class ResPartner(models.Model):
     gender = fields.Selection([('male', 'Masculino'), ('female', 'Femenino')],
                               string='Genero')
     rif_ci = fields.Char('RIF/CI')
+    security_partner = fields.Many2one('security.partner', string="Aseguradora")
 
+class SecurityPartner(models.Model):
+    _name = 'security.partner'
+    
+    name = fields.Char(string='Aseguradora')
