@@ -13,6 +13,9 @@ class ResPartner(models.Model):
                               string='Genero')
     rif_ci = fields.Char('RIF/CI')
     security_partner = fields.Many2one('security.partner', string="Aseguradora")
+    company_type = fields.Selection(string='Company Type',
+        selection=[('person', 'Tomador'), ('company', 'Company')],
+        compute='_compute_company_type', inverse='_write_company_type')
 
 class SecurityPartner(models.Model):
     _name = 'security.partner'
