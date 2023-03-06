@@ -14,10 +14,10 @@ class ResPartner(models.Model):
     rif_ci = fields.Char('RIF/CI')
     security_partner = fields.Many2one('security.partner', string="Aseguradora")
     company_type = fields.Selection(string='Company Type',
-        selection=[('person', 'Tomador'), ('company', 'Company'),('prueba', 'tomadora')],
+        selection=[('company', 'Company'),('person', 'Tomador')],
         compute='_compute_company_type', inverse='_write_company_type')
 
 class SecurityPartner(models.Model):
     _name = 'security.partner'
-    
+
     name = fields.Char(string='Aseguradora')
