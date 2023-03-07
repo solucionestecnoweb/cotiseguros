@@ -4,16 +4,15 @@ from odoo import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    policy_number_benefi = fields.Char('Nro de Poliza')
     policy_number = fields.Char('Nro de Poliza')
     type_partner = fields.Selection([('renewal','Renovacion'), ('new', 'Nuevo')], string='Tipo')
     emission_date = fields.Date(string='Fecha de Emisión')
     due_date = fields.Date(string='Fecha de Vencimiento')
     age = fields.Char('Edad')
-    gender = fields.Selection([('male', 'Masculino'), ('female', 'Femenino')],
-                              string='Genero')
+    gender = fields.Selection([('male', 'Masculino'), ('female', 'Femenino')],string='Genero')
     rif_ci = fields.Char('RIF/CI')
     security_partner = fields.Many2one('security.partner', string="Aseguradora")
-    policy_number_benefi = fields.Char('Nro de Poliza')
     emission_date_benefi= fields.Date(string='Fecha de Emisión')
     due_date_benefi = fields.Date(string='Fecha de Vencimiento')
 
