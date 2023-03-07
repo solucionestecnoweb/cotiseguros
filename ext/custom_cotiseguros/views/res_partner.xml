@@ -28,7 +28,6 @@
                 <xpath expr="//page[@name='contact_addresses']" position="attributes">
                     <attribute name="string">Beneficiario</attribute>
                 </xpath>
-        
             </field>
         </record>
     </data>
