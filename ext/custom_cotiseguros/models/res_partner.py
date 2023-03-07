@@ -13,6 +13,9 @@ class ResPartner(models.Model):
                               string='Genero')
     rif_ci = fields.Char('RIF/CI')
     security_partner = fields.Many2one('security.partner', string="Aseguradora")
+    policy_number_benefi = fields.Char('Nro de Poliza')
+    emission_date_benefi= fields.Date(string='Fecha de Emisión')
+    due_date_benefi = fields.Date(string='Fecha de Vencimiento')
 
 class SecurityPartner(models.Model):
     _name = 'security.partner'
